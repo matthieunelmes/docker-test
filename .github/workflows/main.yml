@@ -1,0 +1,9 @@
+name: main
+on: push
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - run: docker compose -f docker-compose.yml -f docker-compose.release.yml up -d --remove-orphans --build

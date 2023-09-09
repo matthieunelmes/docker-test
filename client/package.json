@@ -1,0 +1,37 @@
+{
+  "name": "southwest_js",
+  "version": "1.0.0",
+  "description": "southwest_js",
+  "repository": {},
+  "scripts": {
+    "build-local": "webpack --env ENVIRONMENT=local --mode production",
+    "build-debug": "webpack --env ENVIRONMENT=debug --mode production",
+    "build-release": "webpack --env ENVIRONMENT=release --mode production",
+    "start": "webpack serve --env ENVIRONMENT=local"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "axios": "latest",
+    "css-loader": "latest",
+    "dotenv-webpack": "latest",
+    "file-loader": "latest",
+    "history": "latest",
+    "html-webpack-plugin": "latest",
+    "path-to-regexp": "latest",
+    "postcss": "latest",
+    "style-loader": "latest",
+    "postcss-loader": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest",
+    "ts-loader": "latest",
+    "typescript": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "webpack-dev-server": "latest"
+  }
+}

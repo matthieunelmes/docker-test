@@ -1,0 +1,34 @@
+version: "3"
+services:
+  haproxy:
+    restart: always
+    build: ./haproxy
+    ports:
+      - "80:80"
+  db:
+    restart: always
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - southwestjs:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: password
+  api:
+    build: ./server
+    ports:
+      - "8000"
+    environment:
+      DATABASE_URL: "postgresql://app_user:password@db:5432/postgres"
+  client:
+    restart: always
+    build:
+      context: ./client
+      args:
+        CONFIGURATION: "debug"
+    ports:
+      - "3000"
+volumes:
+  southwestjs:
